@@ -1,8 +1,12 @@
 import React from "react";
 import employeeList from "../module/employeeList";
 import EmployeeListItem from "./EmployeeListItem";
+import { useContext } from "react";
+import { StaffContext } from "../contexts/StaffContext";
 
 function EmployeeCard() {
+  let { worker } = useContext(StaffContext);
+
   return (
     <div
       style={{
@@ -12,7 +16,7 @@ function EmployeeCard() {
       }}
     >
       <div>
-        <EmployeeListItem employee={employeeList[0]} />
+        <EmployeeListItem employee={worker} />
       </div>
       <div
         style={{
@@ -21,7 +25,7 @@ function EmployeeCard() {
         }}
       >
         <h5>Call Office</h5>
-        <h9>733 528 5255</h9>
+        <h6>733 528 5255</h6>
       </div>
       <div
         style={{
@@ -30,7 +34,7 @@ function EmployeeCard() {
         }}
       >
         <h5>Call Mobile</h5>
-        <h9>733 528 5255</h9>
+        <h6>733 528 5255</h6>
       </div>
       <div
         style={{
@@ -39,7 +43,7 @@ function EmployeeCard() {
         }}
       >
         <h5>SMS</h5>
-        <h9>733 528 5255</h9>
+        <h6>733 528 5255</h6>
       </div>
       <div
         style={{
@@ -47,7 +51,7 @@ function EmployeeCard() {
         }}
       >
         <h5>Email</h5>
-        <h9>king@gmail.com</h9>
+        <h6>king@gmail.com</h6>
       </div>
     </div>
   );

@@ -1,8 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { StaffContext } from "../contexts/StaffContext";
 
 function EmployeeListItem({ employee }) {
+  let { setWorker } = useContext(StaffContext);
   return (
     <div
+      onClick={() => {
+        setWorker(employee);
+      }}
       style={{
         display: "flex",
         border: "solid 2px black",
@@ -21,7 +27,7 @@ function EmployeeListItem({ employee }) {
       />
       <div>
         <h3>{employee.name}</h3>
-        <h9>{employee.jobTitle}</h9>
+        <h6>{employee.jobTitle}</h6>
       </div>
     </div>
   );
